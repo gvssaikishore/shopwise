@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ShopWise Landing Page V2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- HeroSection -->
+<div class="@container w-full max-w-7xl mx-auto">
+<div class="flex flex-col gap-6 px-4 py-10 @[480px]:gap-8 @[864px]:flex-row @[864px]:items-center">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-contain rounded-lg @[480px]:h-auto @[480px]:min-w-[400px] @[864px]:w-full @[864px]:aspect-video @[864px]:bg-cover" data-alt="A smartphone showing the ShopWise app interface with a product and a 'BEST DEAL FOUND!' badge." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpq91k0LJDzafpJNG99809a3WSjnR04bKqjekgxSmI0ssvfMsTkhhWm-m0GWt54Gs_6dpbpfqEHaxRvE1zj-yTSJ1r4MRWOn5dph5izP-dq_-gAOBwUTDs7tejyq2aWzYhFqBfhQFjpbDtcIRWXJrFywUMP2To1_jEGeZEJ_aL_opu6YrbMSFcNIcyD-kdODzeN0NpuOIfKA4WeuMqEbjEUT__jXsIx4tzIM9M__UWTvgeDxPrL1RmM9Qtbv9YINsoPV4RqvHamPs");'></div>
+<div class="flex flex-col gap-6 @[480px]:min-w-[400px] @[480px]:gap-8 @[864px]:justify-center">
+<div class="flex flex-col gap-2 text-left">
+<h1 class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:leading-tight">
+                            Stop Searching. Start Saving. Guaranteed.
+                        </h1>
+<h2 class="text-slate-600 dark:text-slate-300 text-sm font-normal leading-normal @[480px]:text-base">
+                            ShopWise automatically analyzes prices, coupons, and history to confirm you found the absolute best deal.
+                        </h2>
+</div>
+<div class="flex flex-col gap-4">
+<button class="flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Download the Free ShopWise App</span>
+</button>
+<!-- ButtonGroup -->
+<div class="flex w-full justify-center">
+<div class="flex flex-1 gap-3 flex-wrap max-w-[480px] justify-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] grow gap-2 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
+<span class="material-symbols-outlined text-lg">ios</span>
+<span class="truncate">App Store</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] grow gap-2 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
+<span class="material-symbols-outlined text-lg">shop</span>
+<span class="truncate">Google Play</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
