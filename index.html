@@ -3,9 +3,9 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ShopWise Landing Page V2</title>
+<title>🛍️ ShopWise - Smart Shopping Made Simple</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script>
       tailwind.config = {
@@ -13,14 +13,16 @@
         theme: {
           extend: {
             colors: {
-              "primary": "#137fec",
-              "background-light": "#f6f7f8",
-              "background-dark": "#101922",
+              "primary": "#FF6B35",
+              "secondary": "#FFD23F",
+              "accent": "#4ECDC4",
+              "background-light": "#FFF8F0",
+              "background-dark": "#1A1A2E",
             },
             fontFamily: {
-              "display": ["Inter", "sans-serif"]
+              "display": ["Poppins", "sans-serif"]
             },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
           },
         },
       }
@@ -33,6 +35,26 @@
         'GRAD' 0,
         'opsz' 24
       }
+      @keyframes bounce-slow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
+        50% { box-shadow: 0 0 40px rgba(255, 107, 53, 0.8); }
+      }
+      .animate-bounce-slow {
+        animation: bounce-slow 3s ease-in-out infinite;
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow 2s ease-in-out infinite;
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #FF6B35, #FFD23F, #4ECDC4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
     </style>
 <style>
     body {
@@ -42,34 +64,86 @@
   </head>
 <body class="bg-background-light dark:bg-background-dark font-display">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<!-- HeroSection -->
-<div class="@container w-full max-w-7xl mx-auto">
-<div class="flex flex-col gap-6 px-4 py-10 @[480px]:gap-8 @[864px]:flex-row @[864px]:items-center">
-<div class="w-full bg-center bg-no-repeat aspect-square bg-contain rounded-lg @[480px]:h-auto @[480px]:min-w-[400px] @[864px]:w-full @[864px]:aspect-video @[864px]:bg-cover" data-alt="A smartphone showing the ShopWise app interface with a product and a 'BEST DEAL FOUND!' badge." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpq91k0LJDzafpJNG99809a3WSjnR04bKqjekgxSmI0ssvfMsTkhhWm-m0GWt54Gs_6dpbpfqEHaxRvE1zj-yTSJ1r4MRWOn5dph5izP-dq_-gAOBwUTDs7tejyq2aWzYhFqBfhQFjpbDtcIRWXJrFywUMP2To1_jEGeZEJ_aL_opu6YrbMSFcNIcyD-kdODzeN0NpuOIfKA4WeuMqEbjEUT__jXsIx4tzIM9M__UWTvgeDxPrL1RmM9Qtbv9YINsoPV4RqvHamPs");'></div>
-<div class="flex flex-col gap-6 @[480px]:min-w-[400px] @[480px]:gap-8 @[864px]:justify-center">
-<div class="flex flex-col gap-2 text-left">
-<h1 class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:leading-tight">
-                            Stop Searching. Start Saving. Guaranteed.
-                        </h1>
-<h2 class="text-slate-600 dark:text-slate-300 text-sm font-normal leading-normal @[480px]:text-base">
-                            ShopWise automatically analyzes prices, coupons, and history to confirm you found the absolute best deal.
-                        </h2>
+<!-- Animated Background -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none opacity-20">
+  <div class="absolute top-10 left-10 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-bounce-slow"></div>
+  <div class="absolute top-40 right-10 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl animate-bounce-slow" style="animation-delay: 1s;"></div>
+  <div class="absolute bottom-10 left-1/2 w-72 h-72 bg-accent rounded-full mix-blend-multiply filter blur-xl animate-bounce-slow" style="animation-delay: 2s;"></div>
 </div>
-<div class="flex flex-col gap-4">
-<button class="flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
-<span class="truncate">Download the Free ShopWise App</span>
+
+<!-- HeroSection with Enhanced Styling -->
+<div class="@container w-full max-w-7xl mx-auto relative z-10">
+<div class="flex flex-col gap-8 px-4 py-16 @[480px]:gap-12 @[864px]:flex-row @[864px]:items-center">
+<!-- Enhanced Image with Glow Effect -->
+<div class="w-full bg-center bg-no-repeat aspect-square bg-contain rounded-2xl shadow-2xl @[480px]:h-auto @[480px]:min-w-[400px] @[864px]:w-full @[864px]:aspect-video @[864px]:bg-cover animate-pulse-glow border-4 border-primary/30" data-alt="A smartphone showing the ShopWise app interface with a product and a 'BEST DEAL FOUND!' badge." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpq91k0LJDzafpJNG99809a3WSjnR04bKqjekgxSmI0ssvfMsTkhhWm-m0GWt54Gs_6dpbpfqEHaxRvE1zj-yTSJ1r4MRWOn5dph5izP-dq_-gAOBwUTDs7tejyq2aWzYhFqBfhQFjpbDtcIRWXJrFywUMP2To1_jEGeZEJ_aL_opu6YrbMSFcNIcyD-kdODzeN0NpuOIfKA4WeuMqEbjEUT__jXsIx4tzIM9M__UWTvgeDxPrL1RmM9Qtbv9YINsoPV4RqvHamPs");'></div>
+
+<div class="flex flex-col gap-8 @[480px]:min-w-[400px] @[480px]:gap-10 @[864px]:justify-center">
+<!-- Badge -->
+<div class="flex justify-start">
+<span class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-full text-sm shadow-lg transform hover:scale-105 transition-transform">
+  <span class="material-symbols-outlined text-xl">stars</span>
+  NEW: AI-Powered Price Intelligence
+</span>
+</div>
+
+<div class="flex flex-col gap-4 text-left">
+<h1 class="gradient-text text-5xl font-black leading-tight tracking-tight @[480px]:text-6xl @[480px]:leading-tight animate-fade-in">
+  🚀 Stop Searching.<br/>Start Saving.<br/><span class="text-primary dark:text-secondary">Guaranteed.</span>
+</h1>
+<h2 class="text-slate-700 dark:text-slate-200 text-lg font-semibold leading-relaxed @[480px]:text-xl">
+  ShopWise uses <span class="text-accent font-bold">AI technology</span> to analyze millions of prices, coupons, and historical data to confirm you found the <span class="text-primary font-bold">absolute best deal</span> every time! 💰
+</h2>
+
+<!-- Stats Section -->
+<div class="flex gap-6 flex-wrap mt-4">
+  <div class="flex flex-col">
+    <span class="text-3xl font-black text-primary dark:text-secondary">$2.5M+</span>
+    <span class="text-sm text-slate-600 dark:text-slate-400">Saved by Users</span>
+  </div>
+  <div class="flex flex-col">
+    <span class="text-3xl font-black text-accent">500K+</span>
+    <span class="text-sm text-slate-600 dark:text-slate-400">Happy Shoppers</span>
+  </div>
+  <div class="flex flex-col">
+    <span class="text-3xl font-black text-secondary dark:text-primary">4.9★</span>
+    <span class="text-sm text-slate-600 dark:text-slate-400">App Rating</span>
+  </div>
+</div>
+</div>
+
+<div class="flex flex-col gap-5">
+<button class="flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-16 px-8 bg-gradient-to-r from-primary via-secondary to-accent text-white text-lg font-black leading-normal tracking-wide hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
+<span class="material-symbols-outlined text-2xl mr-2">download</span>
+<span class="truncate">Download ShopWise FREE Now! 🎉</span>
 </button>
-<!-- ButtonGroup -->
+
+<!-- Enhanced Button Group with Icons -->
 <div class="flex w-full justify-center">
-<div class="flex flex-1 gap-3 flex-wrap max-w-[480px] justify-center">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] grow gap-2 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
-<span class="material-symbols-outlined text-lg">ios</span>
+<div class="flex flex-1 gap-4 flex-wrap max-w-[480px] justify-center">
+<button class="flex min-w-[140px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-6 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-base font-bold leading-normal tracking-wide grow gap-3 hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 border-slate-800 dark:border-slate-200">
+<span class="material-symbols-outlined text-2xl">apple</span>
 <span class="truncate">App Store</span>
 </button>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] grow gap-2 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
-<span class="material-symbols-outlined text-lg">shop</span>
+<button class="flex min-w-[140px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-6 bg-accent text-white text-base font-bold leading-normal tracking-wide grow gap-3 hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 border-accent/30">
+<span class="material-symbols-outlined text-2xl">android</span>
 <span class="truncate">Google Play</span>
 </button>
+</div>
+</div>
+
+<!-- Trust Indicators -->
+<div class="flex items-center justify-center gap-4 flex-wrap mt-4">
+<div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+  <span class="material-symbols-outlined text-green-500">verified</span>
+  <span>100% Free</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+  <span class="material-symbols-outlined text-green-500">lock</span>
+  <span>Secure & Private</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+  <span class="material-symbols-outlined text-green-500">speed</span>
+  <span>Instant Setup</span>
 </div>
 </div>
 </div>
