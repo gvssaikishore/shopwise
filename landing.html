@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📱 Join ShopWise - Smart Price Comparison App</title>
+<meta name="description" content="Get early access to ShopWise - the AI-powered mobile app that finds the best deals automatically. Join thousands of smart shoppers!"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX'); // Replace with your GA4 Measurement ID
+</script>
+
+<!-- Analytics Helper Functions -->
+<script>
+  // Track custom events
+  function trackEvent(eventName, eventParams = {}) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', eventName, eventParams);
+    }
+    console.log('Event tracked:', eventName, eventParams);
+  }
+
+  // Track button clicks
+  function trackButtonClick(buttonName, buttonCategory = 'CTA') {
+    trackEvent('button_click', {
+      button_name: buttonName,
+      button_category: buttonCategory,
+      page_location: window.location.href
+    });
+  }
+
+  // Track form submissions
+  function trackFormSubmit(formName) {
+    trackEvent('form_submit', {
+      form_name: formName,
+      page_location: window.location.href
+    });
+  }
+
+  // Track interest level
+  function trackInterestLevel(level) {
+    trackEvent('interest_level', {
+      level: level,
+      page_location: window.location.href
+    });
+  }
+</script>
+
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#FF6B35",
+          "secondary": "#FFD23F",
+          "accent": "#4ECDC4",
+          "background-light": "#FFF8F0",
+          "background-dark": "#1A1A2E",
+        },
+        fontFamily: {
+          "display": ["Poppins", "sans-serif"]
+        },
+        borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(255, 107, 53, 0.8); }
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #FF6B35, #FFD23F, #4ECDC4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  body {
+    min-height: 100vh;
+  }
+  
+  /* Form styling */
+  input[type="email"], input[type="text"], select {
+    @apply w-full px-4 py-3 rounded-lg border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all;
+  }
+  
+  label {
+    @apply block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2;
+  }
+</style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+  
+  <!-- Navigation -->
+  <nav class="w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-700 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2 text-2xl font-black text-primary hover:text-secondary transition-colors">
+        <span class="material-symbols-outlined text-3xl">shopping_bag</span>
+        <span>ShopWise</span>
+      </a>
+      <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors font-semibold">
+        ← Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-full text-sm shadow-lg mb-8 animate-float">
+        <span class="material-symbols-outlined">rocket_launch</span>
+        Early Access Program
+      </div>
+      
+      <h1 class="gradient-text text-5xl md:text-6xl font-black leading-tight mb-6">
+        🎯 Join the Smart Shopping Revolution
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-slate-700 dark:text-slate-200 mb-8 leading-relaxed">
+        Be among the first to experience <span class="text-primary font-bold">AI-powered price comparison</span> 
+        that saves you money on every purchase. Get exclusive early access!
+      </p>
+
+      <!-- Social Proof -->
+      <div class="flex justify-center gap-8 flex-wrap mb-12">
+        <div class="text-center">
+          <div class="text-4xl font-black text-primary dark:text-secondary">15K+</div>
+          <div class="text-sm text-slate-600 dark:text-slate-400">Waitlist Members</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-black text-accent">$850</div>
+          <div class="text-sm text-slate-600 dark:text-slate-400">Avg. Yearly Savings</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-black text-secondary dark:text-primary">2M+</div>
+          <div class="text-sm text-slate-600 dark:text-slate-400">Prices Analyzed Daily</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interest Capture Form -->
+  <section class="py-12 px-4 bg-white dark:bg-slate-900">
+    <div class="max-w-2xl mx-auto">
+      <div class="bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 rounded-2xl p-8 md:p-12 shadow-2xl border-2 border-primary/20">
+        
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4 text-center">
+          🎁 Get Early Access + Exclusive Perks
+        </h2>
+        
+        <p class="text-center text-slate-600 dark:text-slate-300 mb-8">
+          Join now and get <span class="text-primary font-bold">3 months premium free</span> when we launch!
+        </p>
+
+        <form id="interestForm" class="space-y-6">
+          <!-- Name -->
+          <div>
+            <label for="name">Full Name *</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              placeholder="Enter your name"
+              oninput="trackEvent('form_field_filled', {field_name: 'name'})"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email">Email Address *</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              placeholder="you@example.com"
+              oninput="trackEvent('form_field_filled', {field_name: 'email'})"
+            />
+          </div>
+
+          <!-- Shopping Frequency -->
+          <div>
+            <label for="frequency">How often do you shop online? *</label>
+            <select 
+              id="frequency" 
+              name="frequency" 
+              required
+              onchange="trackEvent('form_field_selected', {field_name: 'frequency', value: this.value})"
+            >
+              <option value="">Select...</option>
+              <option value="daily">Daily - I'm always shopping!</option>
+              <option value="weekly">Weekly - Regular shopper</option>
+              <option value="monthly">Monthly - Occasional buyer</option>
+              <option value="rarely">Rarely - Only when needed</option>
+            </select>
+          </div>
+
+          <!-- Interest Level -->
+          <div>
+            <label>How interested are you in ShopWise? *</label>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-2">
+              <button 
+                type="button" 
+                class="interest-btn px-6 py-4 rounded-xl border-2 border-slate-300 dark:border-slate-600 hover:border-primary hover:bg-primary/10 transition-all font-semibold text-slate-700 dark:text-slate-200"
+                onclick="selectInterest('somewhat', this)"
+              >
+                😊 Somewhat Interested
+              </button>
+              <button 
+                type="button" 
+                class="interest-btn px-6 py-4 rounded-xl border-2 border-slate-300 dark:border-slate-600 hover:border-accent hover:bg-accent/10 transition-all font-semibold text-slate-700 dark:text-slate-200"
+                onclick="selectInterest('very', this)"
+              >
+                🤩 Very Interested
+              </button>
+              <button 
+                type="button" 
+                class="interest-btn px-6 py-4 rounded-xl border-2 border-slate-300 dark:border-slate-600 hover:border-secondary hover:bg-secondary/10 transition-all font-semibold text-slate-700 dark:text-slate-200"
+                onclick="selectInterest('extremely', this)"
+              >
+                🔥 Extremely Interested!
+              </button>
+            </div>
+            <input type="hidden" id="interest_level" name="interest_level" required />
+          </div>
+
+          <!-- Categories -->
+          <div>
+            <label>What do you usually shop for? (Check all that apply)</label>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-2">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="categories" value="electronics" class="w-5 h-5 text-primary rounded" onchange="trackEvent('category_selected', {category: 'electronics'})"/>
+                <span class="text-sm">📱 Electronics</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="categories" value="fashion" class="w-5 h-5 text-primary rounded" onchange="trackEvent('category_selected', {category: 'fashion'})"/>
+                <span class="text-sm">👕 Fashion</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="categories" value="home" class="w-5 h-5 text-primary rounded" onchange="trackEvent('category_selected', {category: 'home'})"/>
+                <span class="text-sm">🏠 Home & Garden</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="categories" value="beauty" class="w-5 h-5 text-primary rounded" onchange="trackEvent('category_selected', {category: 'beauty'})"/>
+                <span class="text-sm">💄 Beauty</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="categories" value="sports" class="w-5 h-5 text-primary rounded" onchange="trackEvent('category_selected', {category: 'sports'})"/>
+                <span class="text-sm">⚽ Sports</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="categories" value="other" class="w-5 h-5 text-primary rounded" onchange="trackEvent('category_selected', {category: 'other'})"/>
+                <span class="text-sm">🛍️ Other</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            class="w-full h-16 px-8 bg-gradient-to-r from-primary via-secondary to-accent text-white text-xl font-black rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow flex items-center justify-center gap-3"
+            onclick="trackButtonClick('Join Waitlist', 'Primary CTA')"
+          >
+            <span class="material-symbols-outlined text-2xl">check_circle</span>
+            <span>Join the Waitlist - It's FREE!</span>
+          </button>
+
+          <p class="text-center text-xs text-slate-500 dark:text-slate-400 mt-4">
+            🔒 We respect your privacy. No spam, ever. Unsubscribe anytime.
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-black text-center mb-12 text-slate-900 dark:text-white">
+        Why Early Members Love ShopWise
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-lg hover:shadow-2xl transition-shadow">
+          <div class="text-5xl mb-4">🤖</div>
+          <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">AI-Powered</h3>
+          <p class="text-slate-600 dark:text-slate-300">Advanced algorithms find deals you'd never discover manually</p>
+        </div>
+        
+        <div class="text-center p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-lg hover:shadow-2xl transition-shadow">
+          <div class="text-5xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Instant Results</h3>
+          <p class="text-slate-600 dark:text-slate-300">Compare prices across 1000+ stores in seconds</p>
+        </div>
+        
+        <div class="text-center p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-lg hover:shadow-2xl transition-shadow">
+          <div class="text-5xl mb-4">🎯</div>
+          <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Price Alerts</h3>
+          <p class="text-slate-600 dark:text-slate-300">Get notified when prices drop on items you want</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white py-8 px-4 mt-auto">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex justify-center items-center gap-2 mb-4">
+        <span class="material-symbols-outlined text-3xl text-primary">shopping_bag</span>
+        <span class="text-2xl font-black">ShopWise</span>
+      </div>
+      <p class="text-slate-400 text-sm">© 2025 ShopWise. All rights reserved.</p>
+      <div class="flex justify-center gap-6 mt-4 text-sm">
+        <a href="#" class="text-slate-400 hover:text-primary transition-colors" onclick="trackButtonClick('Privacy Policy', 'Footer')">Privacy Policy</a>
+        <a href="#" class="text-slate-400 hover:text-primary transition-colors" onclick="trackButtonClick('Terms', 'Footer')">Terms of Service</a>
+        <a href="#" class="text-slate-400 hover:text-primary transition-colors" onclick="trackButtonClick('Contact', 'Footer')">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Form Submission Handler -->
+<script>
+  let selectedInterest = null;
+
+  // Handle interest level selection
+  function selectInterest(level, button) {
+    selectedInterest = level;
+    document.getElementById('interest_level').value = level;
+    
+    // Update button styles
+    document.querySelectorAll('.interest-btn').forEach(btn => {
+      btn.classList.remove('border-primary', 'bg-primary/20', 'border-accent', 'bg-accent/20', 'border-secondary', 'bg-secondary/20');
+      btn.classList.add('border-slate-300', 'dark:border-slate-600');
+    });
+    
+    // Highlight selected button
+    if (level === 'somewhat') {
+      button.classList.remove('border-slate-300', 'dark:border-slate-600');
+      button.classList.add('border-primary', 'bg-primary/20');
+    } else if (level === 'very') {
+      button.classList.remove('border-slate-300', 'dark:border-slate-600');
+      button.classList.add('border-accent', 'bg-accent/20');
+    } else if (level === 'extremely') {
+      button.classList.remove('border-slate-300', 'dark:border-slate-600');
+      button.classList.add('border-secondary', 'bg-secondary/20');
+    }
+    
+    // Track interest selection
+    trackInterestLevel(level);
+  }
+
+  // Handle form submission
+  document.getElementById('interestForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Validate interest level
+    if (!selectedInterest) {
+      alert('Please select your interest level');
+      return;
+    }
+    
+    // Collect form data
+    const formData = new FormData(this);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      frequency: formData.get('frequency'),
+      interest_level: selectedInterest,
+      categories: formData.getAll('categories'),
+      timestamp: new Date().toISOString()
+    };
+    
+    // Track form submission
+    trackFormSubmit('Interest Form');
+    trackEvent('lead_generated', {
+      interest_level: selectedInterest,
+      shopping_frequency: data.frequency,
+      categories_count: data.categories.length
+    });
+    
+    // Log data (in production, send to your backend/database)
+    console.log('Form submitted:', data);
+    
+    // Store in localStorage for demo purposes
+    const submissions = JSON.parse(localStorage.getItem('shopwise_submissions') || '[]');
+    submissions.push(data);
+    localStorage.setItem('shopwise_submissions', JSON.stringify(submissions));
+    
+    // Redirect to thank you page
+    window.location.href = 'thankyou.html?email=' + encodeURIComponent(data.email);
+  });
+
+  // Track page load
+  trackEvent('page_view', {
+    page_title: document.title,
+    page_location: window.location.href
+  });
+</script>
+
+</body>
+</html>
